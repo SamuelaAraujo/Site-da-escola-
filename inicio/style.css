@@ -1,0 +1,236 @@
+/* Definições Básicas */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Cor de fundo geral do corpo */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 1. Topo de Contato e Redes Sociais (Barra Roxa Clara) */
+.top-bar {
+    background-color: #9c369e; /* Roxo da barra superior */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5%;
+    font-size: 0.9em;
+}
+
+.left-space {
+    flex: 1;
+}
+
+.email-center {
+    flex: 2;
+    text-align: center;
+}
+
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.contact-info span, .social-media span {
+    margin-right: 20px;
+    /* Ícones como placeholders: os caracteres unicode (&#9742;, &#9993;, &#128247;) representam ícones */
+}
+
+.social-media {
+    /* Alinha o item de mídia social à direita */
+    margin-left: auto; 
+}
+
+/* 2. Cabeçalho Principal (Logo e Menu) */
+.main-header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid #9c369e; /* Linha roxa sob o menu */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    /* Placeholder para o logo (ícone azul e roxo) */
+    width: 30px;
+    height: 30px;
+    background-color: #4b89dc; /* Cor similar ao logo */
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 1px solid #9c369e;
+}
+
+.logo-area h1 {
+    font-size: 1.5em;
+    color: #9c369e; /* Roxo */
+    margin: 0;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li a {
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.main-nav li a:hover {
+    color: #9c369e;
+}
+
+/* 3. Área de Conteúdo Principal */
+.content-area {
+    padding: 20px 5%;
+    position: relative;
+    /* Adiciona a imagem de fundo clara (não visível no código, apenas placeholder) */
+    background-image: url('placeholder-fundo-claro.jpg'); /* Substitua pelo caminho da sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+
+.main-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Ajuste para simular a disposição do layout, centralizando o conteúdo no espaço disponível */
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.text-and-students {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px; /* Espaço para o rodapé de ações */
+}
+
+.welcome-text {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.welcome-text h2 {
+    font-family: 'Times New Roman', serif; /* Fonte mais clássica, como na imagem */
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+}
+
+.welcome-text p {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.students-photos {
+    display: flex;
+    gap: 10px; /* Espaçamento entre as fotos dos alunos */
+    height: 250px; /* Altura aproximada para os alunos */
+}
+
+.student {
+    /* Placeholder para as fotos dos alunos. Use <img src="..."> na vida real */
+    width: 150px; 
+    height: 100%;
+    border-radius: 5px;
+    background-image: url('placeholder-aluno.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.puzzle-and-staff {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.puzzle {
+    /* Placeholder para a imagem do quebra-cabeça. Na vida real, seria uma imagem PNG */
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-areas: 
+        ". red blue ."
+        "red red blue blue"
+        "green green yellow yellow"
+        ". green yellow .";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+    transform: rotate(-10deg); /* Pequena rotação para simular o efeito da imagem */
+    margin-bottom: 20px;
+}
+
+.piece {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* Cores do Quebra-Cabeça */
+.red { background-color: #e53935; grid-area: red; }
+.blue { background-color: #1e88e5; grid-area: blue; }
+.yellow { background-color: #ffb300; grid-area: yellow; }
+.green { background-color: #43a047; grid-area: green; }
+
+.staff-photos {
+    display: flex;
+    gap: 10px;
+    height: 200px; /* Altura aproximada para as funcionárias */
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+.staff {
+    /* Placeholder para as fotos das funcionárias */
+    width: 150px; 
+    height: 100%;
+    border-radius: 5px;
+    background-image: url('placeholder-funcionario.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+
+/* 4. Rodapé de Ações/Conceitos (Barra Roxa Escura) */
+.action-bar {
+    background-color: #9c369e; /* Roxo da barra inferior */
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 5%;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.action-bar span {
+    padding: 0 10px;
+}

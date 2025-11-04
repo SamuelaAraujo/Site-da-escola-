@@ -1,4 +1,4 @@
-/* Reset */
+/* Resetar estilos padrão */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Top Bar */
+/* Barra superior */
 .top-bar {
   background-color: #A1037E;
   color: white;
@@ -57,7 +57,7 @@ body {
 }
 
 
-/* Hero Section */
+/* Seção principal */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -65,11 +65,106 @@ body {
   align-items: flex-start;
   padding: 40px;
   background: linear-gradient(to bottom right, #fff, #f0f0f0);
-   height: 500px; /* Adjust the height as needed */
+   height: 500px; /* Ajuste a altura conforme necessário */
+  /* imagem de fundo movida para .home .hero para aparecer apenas na página inicial */
+}
+
+/* Aplica a imagem de fundo somente quando a página tem a classe .home (ex: index.html) */
+.home .hero {
   background-image: url('../imagem/ANOS.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Imagem lateral direita na página sobre */
+.right-image {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.right-image .side-logo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Box para sobre.html: centraliza título (h1) e coloca parágrafo abaixo */
+.hero-box {
+  max-width: 900px;
+  margin: 40px auto;
+  margin-right: 220px; /* espaço para a imagem à direita */
+  background: rgba(255,255,255,0.95);
+  padding: 28px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center; /* centra h1 e p horizontalmente */
+}
+
+.hero-box h1 {
+  font-size: 28px;
+  color: #A1037E;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.hero-box p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .right-image {
+    position: static;
+    width: 150px;
+    margin: 20px auto;
+    transform: none;
+  }
+  .hero-box {
+    margin: 20px 16px;
+    padding: 20px;
+  }
+  .hero-box h1 { font-size: 22px; }
+  .hero-box p { font-size: 15px; }
+}
+
+/* Imagem decorativa do canto: posicionada no topo-esquerda com apenas metade visível */
+.corner-logo {
+  position: fixed;
+  top: 42px; /* movida mais para baixo conforme solicitado */
+  left: -4px; /* força imagem totalmente à esquerda */
+  z-index: 999;
+  pointer-events: none; /* não bloqueia cliques */
+  overflow: hidden;
+  width: 200px; /* porção visível maior */
+  height: auto;
+  border-radius: 0; /* remove arredondamento */
+}
+
+.corner-logo img {
+  display: block;
+  width: 400px; /* imagem exibida com o dobro da largura visível para mostrar apenas metade */
+  height: auto;
+  object-fit: cover;
+  object-position: left center;
+  /* recorta 50% do lado direito para mostrar apenas metade esquerda */
+  -webkit-clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 50% 0 0);
+  transform: translateY(8px); /* ajuste fino para baixo */
+}
+
+@media (max-width: 480px) {
+  .corner-logo { width: 120px; left: -4px; top: 28px; }
+  .corner-logo img { width: 240px; }
 }
 
 .section {
@@ -139,7 +234,7 @@ body {
   height: auto;
 }
 
-/* Footer */
+/* Rodapé */
 .footer {
   display: flex;
   justify-content: space-around;
@@ -188,9 +283,7 @@ body {
   }
 }
 
-/* ...existing code... */
-
-/* Navbar */
+/* Barra de navegação */
 .navbar {
   background-color: white;
   display: flex;
@@ -199,7 +292,7 @@ body {
   padding: 20px 40px;
   border-bottom: 2px solid #ddd;
   flex-wrap: wrap;
-  position: relative; /* <-- garante que .nav-links se posicione em relação à navbar */
+  position: relative; /* garante que .nav-links se posicione em relação à navbar */
   z-index: 1;
 }
 
@@ -288,7 +381,7 @@ body {
   color: #0003ff;
 }
 
-/* responsivo: menu vira coluna */
+/* Adaptação para telas menores: menu vira coluna */
 @media (max-width:1000px) {
   .nav-links { position: static; transform: none; flex-direction: column; gap:12px; margin-top:10px; }
   .logo-area .school-name { display:none; }

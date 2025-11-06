@@ -1,390 +1,461 @@
-/* Resetar estilos padrão */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  
+        /* === CONFIGURAÇÕES GLOBAIS E VARIÁVEIS === */
+        :root {
+            --cor-principal-roxo: #A1037E; /* Roxo escuro (estimado) */
+            --cor-principal-azul: #303f9f; /* Azul dos crachás (estimado) */
+            --cor-texto: #333;
+            --cor-cinza-claro: #f0f0f0;
+            --cor-borda: #ddd;
+        }
 
-body {
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #fdfdfd;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Barra superior */
-.top-bar {
-  background-color: #A1037E;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 30px;
-  font-size: 14px;
-  flex-wrap: wrap;
-}
+        html, body {
+            height: 100%;
+        }
 
-.top-bar a {
-  color: white;
-  text-decoration: none;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--cor-texto);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-/* Navbar */
-.navbar {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  border-bottom: 2px solid #ddd;
-  flex-wrap: wrap;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.logo-area {
-  display: flex;
-  align-items: center;
-}
+        /* === 1. BARRA SUPERIOR DE CONTATO === */
+        .top-bar {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 5%;
+            border-bottom: 1px solid var(--cor-cinza-claro);
+            font-size: 0.9em;
+        }
 
-.logo-img {
-  height: 60px;
-  margin-right: 15px;
-}
+        .top-bar-contact {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebrar linha */
+            gap: 15px; /* Espaçamento entre itens */
+        }
 
-.school-name {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.3;
-}
+        .top-bar-contact span,
+        .top-bar-social span {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Espaço entre ícone e texto */
+        }
 
+        /* === 2. CABEÇALHO PRINCIPAL (LOGO + NAV) === */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
 
-/* Seção principal */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 40px;
-  background: linear-gradient(to bottom right, #fff, #f0f0f0);
-   height: 500px; /* Ajuste a altura conforme necessário */
-  /* imagem de fundo movida para .home .hero para aparecer apenas na página inicial */
-}
+        .logo img {
+            height: 60px; /* Altura do logo - ajuste conforme necessário */
+        }
 
-/* Aplica a imagem de fundo somente quando a página tem a classe .home (ex: index.html) */
-.home .hero {
-  background-image: url('../imagem/ANOS.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+        .main-nav nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-/* Imagem lateral direita na página sobre */
-.right-image {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
+        .main-nav nav li a {
+            text-decoration: none;
+            color: var(--cor-texto);
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
 
-.right-image .side-logo {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+        /* Destaque "PEDAGÓGICO" */
+        .main-nav nav li a.active,
+        .main-nav nav li a:hover {
+            background-color: var(--cor-principal-roxo);
+            color: white;
+        }
 
-/* Box para sobre.html: centraliza título (h1) e coloca parágrafo abaixo */
-.hero-box {
-  max-width: 900px;
-  margin: 40px auto;
-  margin-right: 220px; /* espaço para a imagem à direita */
-  background: rgba(255,255,255,0.95);
-  padding: 28px 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  text-align: center; /* centra h1 e p horizontalmente */
-}
+        /* === 3. SEÇÃO PEDAGÓGICO (PRINCIPAL) === */
+        .pedagogico-section {
+            background-color: var(--cor-cinza-claro);
+            padding: 40px 5%;
+            flex: 1; /* Faz a seção principal ocupar o espaço disponível */
+        }
 
-.hero-box h1 {
-  font-size: 28px;
-  color: #A1037E;
-  margin: 0 0 12px 0;
-  line-height: 1.2;
-}
+        .pedagogico-content {
+            display: flex;
+            gap: 30px;
+        }
 
-.hero-box p {
-  font-size: 16px;
-  color: #333;
-  margin: 0;
-  line-height: 1.6;
-}
+        /* Grid da equipe */
+        .team-grid {
+            flex: 3; /* Ocupa 3/4 do espaço */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+            gap: 25px;
+        }
 
-@media (max-width: 768px) {
-  .right-image {
-    position: static;
-    width: 150px;
-    margin: 20px auto;
-    transform: none;
-  }
-  .hero-box {
-    margin: 20px 16px;
-    padding: 20px;
-  }
-  .hero-box h1 { font-size: 22px; }
-  .hero-box p { font-size: 15px; }
-}
+        .team-card {
+            background-color: white;
+            border: 1px solid var(--cor-borda);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow: hidden; /* Para arredondar a imagem */
+        }
 
-/* Imagem decorativa do canto: posicionada no topo-esquerda com apenas metade visível */
-.corner-logo {
-  position: fixed;
-  top: 42px; /* movida mais para baixo conforme solicitado */
-  left: -4px; /* força imagem totalmente à esquerda */
-  z-index: 999;
-  pointer-events: none; /* não bloqueia cliques */
-  overflow: hidden;
-  width: 200px; /* porção visível maior */
-  height: auto;
-  border-radius: 0; /* remove arredondamento */
-}
+        .team-card img {
+            width: 100%;
+            height: 300px; /* Altura fixa para as fotos */
+            object-fit: cover; /* Garante que a imagem cubra o espaço */
+        }
 
-.corner-logo img {
-  display: block;
-  width: 400px; /* imagem exibida com o dobro da largura visível para mostrar apenas metade */
-  height: auto;
-  object-fit: cover;
-  object-position: left center;
-  /* recorta 50% do lado direito para mostrar apenas metade esquerda */
-  -webkit-clip-path: inset(0 50% 0 0);
-  clip-path: inset(0 50% 0 0);
-  transform: translateY(8px); /* ajuste fino para baixo */
-}
+        .team-card-info {
+            padding: 0;
+        }
 
-@media (max-width: 480px) {
-  .corner-logo { width: 120px; left: -4px; top: 28px; }
-  .corner-logo img { width: 240px; }
-}
+        .team-card-info .title {
+            font-size: 0.9em;
+            font-weight: 600;
+            background-color: var(--cor-principal-azul);
+            color: white;
+            padding: 10px;
+        }
 
-.section {
-  flex: 1 1 300px;
-  padding: 20px;
-}
+        .team-card-info .name {
+            font-size: 1.1em;
+            font-weight: 700;
+            background-color: var(--cor-principal-azul);
+            color: white;
+            padding: 10px;
+            border-top: 1px solid #fff3;
+        }
+        
+        /* Logo lateral MLMB */
+        .logo-sidebar {
+            flex: 1; /* Ocupa 1/4 do espaço */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.left-side h2 {
-  font-size: 24px;
-  color: #A1037E;
-  margin-bottom: 10px;
-}
+        .logo-sidebar img {
+            max-width: 100%;
+            height: auto;
+        }
 
-.left-side p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
+        /* === 4. BARRA INFERIOR "PILARES" === */
+        .pillars-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--cor-principal-roxo);
+            color: white;
+            padding: 20px 5%;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-top: auto; /* Garante que o rodapé fique na parte inferior */
+        }
 
-.puzzle-img {
-  max-width: 100%;
-  height: auto;
-}
+        /* === RESPONSIVIDADE === */
 
-.center-logo {
-  max-width: 150px;
-  display: block;
-  margin: 0 auto;
-}
+        /* Para Tablets (ex: <= 992px) */
+        @media (max-width: 992px) {
+            .pedagogico-content {
+                flex-direction: column; /* Empilha o grid e o logo */
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+            }
 
-.badge {
-  background-color: #F08ACD;
-  padding: 20px;
-  border-radius: 15px;
-  color: #4d004d;
-  text-align: center;
-  font-weight: bold;
-  max-width: 220px;
-  margin: 0 auto;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-}
+            .logo-sidebar {
+                padding: 20px 0;
+            }
 
-.badge-title {
-  font-size: 32px;
-}
+            .logo-sidebar img {
+                max-width: 200px; /* Limita o tamanho do logo */
+            }
+        }
 
-.badge-sub {
-  font-size: 20px;
-  margin: 10px 0;
-}
+        /* Para Celulares (ex: <= 768px) */
+        @media (max-width: 768px) {
+            .top-bar {
+                justify-content: center;
+                text-align: center;
+            }
+            .top-bar-contact {
+                flex-direction: column; /* Empilha contatos */
+                gap: 5px;
+                margin-bottom: 10px;
+            }
 
-.badge-bottom {
-  font-size: 16px;
-}
+            .main-header {
+                flex-direction: column; /* Empilha logo e nav */
+                gap: 15px;
+            }
 
-.bottom-images {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  width: 100%;
-  margin-top: 40px;
-}
+            .main-nav nav ul {
+                flex-direction: column; /* Empilha links da nav */
+                text-align: center;
+                gap: 5px;
+            }
 
-.students-img,
-.teachers-img {
-  max-height: 200px;
-  height: auto;
-}
+            .team-grid {
+                grid-template-columns: 1fr; /* 1 coluna */
+            }
 
-/* Rodapé */
-.footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 15px 0;
-  background-color: #A1037E;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  flex-wrap: wrap;
-}
+            .pillars-bar {
+                flex-direction: column; /* Empilha os pilares */
+                text-align: center;
+                gap: 15px;
+            }
+        }
 
-.footer-box {
-  flex: 1 1 150px;
-  text-align: center;
-  padding: 15px 10px;
-}
+    
 
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .top-bar, .navbar, .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+/* pedagogico *\
 
-  .nav-links {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
-  }
+      /* === CONFIGURAÇÕES GLOBAIS E VARIÁVEIS === */
+        :root {
+            --cor-principal-roxo: #A1037E; /* Roxo escuro (estimado) */
+            --cor-principal-azul: #303f9f; /* Azul dos crachás (estimado) */
+            --cor-texto: #333;
+            --cor-cinza-claro: #f0f0f0;
+            --cor-borda: #ddd;
+        }
 
-  .hero {
-    flex-direction: column;
-    align-items: center;
-  }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  .section {
-    padding: 10px;
-    text-align: center;
-  }
+        html, body {
+            height: 100%;
+        }
 
-  .footer-box {
-    margin: 5px 0;
-  }
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--cor-texto);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-/* Barra de navegação */
-.navbar {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  border-bottom: 2px solid #ddd;
-  flex-wrap: wrap;
-  position: relative; /* garante que .nav-links se posicione em relação à navbar */
-  z-index: 1;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.logo-area {
-  display: flex;
-  align-items: center;
-  z-index: 3; /* logo acima dos links centralizados */
-}
+        /* === 1. BARRA SUPERIOR DE CONTATO === */
+        .top-bar {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 5%;
+            border-bottom: 1px solid var(--cor-cinza-claro);
+            font-size: 0.9em;
+        }
 
-/* centraliza o menu exatamente no centro da navbar (horizontal + vertical) */
-.nav-links {
-  list-style: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  gap: 36px;
-  margin: 0;
-  padding: 0;
-  z-index: 2;
-}
+        .top-bar-contact {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebrar linha */
+            gap: 15px; /* Espaçamento entre itens */
+        }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 800;
-  letter-spacing: 1px;
-  transition: color 150ms ease;
-}
-.nav-links li a:hover,
-.nav-links li a:focus {
-  color: #0003ff; /* cor ao passar o cursor */
-}
+        .top-bar-contact span,
+        .top-bar-social span {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Espaço entre ícone e texto */
+        }
 
-/* Responsividade: transformar menu central em coluna quando menor */
-@media (max-width: 768px) {
-  .nav-links {
-    position: static;
-    transform: none;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 12px;
-  }
-  .logo-area .school-name { display: none; }
-}
+        /* === 2. CABEÇALHO PRINCIPAL (LOGO + NAV) === */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
 
-/* ...existing code... */
+        .logo img {
+            height: 60px; /* Altura do logo - ajuste conforme necessário */
+        }
 
-/* ...existing code... */
+        .main-nav nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-/* Navbar */
-.navbar {
-  background:#fff;
-  display:block;
-  position:relative; /* garante centralização correta do menu */
-  padding:14px 24px;
-  border-bottom:1px solid rgba(0,0,0,0.06);
-  align-items:center;
-  z-index:1;
-}
-.logo-area { display:inline-flex; align-items:center; gap:12px; z-index:3; }
+        .main-nav nav li a {
+            text-decoration: none;
+            color: var(--cor-texto);
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
 
-/* nav links centralizados */
-.nav-links {
-  list-style:none;
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  display:flex;
-  gap:36px;
-  margin:0;
-  padding:0;
-  z-index:2;
-}
-.nav-links li a {
-  text-decoration:none;
-  color:#333;
-  font-weight:800;
-  letter-spacing:1px;
-  transition: color 150ms ease;
-}
-.nav-links li a:hover,
-.nav-links li a:focus {
-  color: #0003ff;
-}
+        /* Destaque "PEDAGÓGICO" */
+        .main-nav nav li a.active,
+        .main-nav nav li a:hover {
+            background-color: var(--cor-principal-roxo);
+            color: white;
+        }
 
-/* Adaptação para telas menores: menu vira coluna */
-@media (max-width:1000px) {
-  .nav-links { position: static; transform: none; flex-direction: column; gap:12px; margin-top:10px; }
-  .logo-area .school-name { display:none; }
-}
+        /* === 3. SEÇÃO PEDAGÓGICO (PRINCIPAL) === */
+        .pedagogico-section {
+            background-color: var(--cor-cinza-claro);
+            padding: 40px 5%;
+            flex: 1; /* Faz a seção principal ocupar o espaço disponível */
+        }
 
-/* ...existing code... */
+        .pedagogico-content {
+            display: flex;
+            gap: 30px;
+        }
+
+        /* Grid da equipe */
+        .team-grid {
+            flex: 3; /* Ocupa 3/4 do espaço */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+            gap: 25px;
+        }
+
+        .team-card {
+            background-color: white;
+            border: 1px solid var(--cor-borda);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow: hidden; /* Para arredondar a imagem */
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 300px; /* Altura fixa para as fotos */
+            object-fit: cover; /* Garante que a imagem cubra o espaço */
+        }
+
+        .team-card-info {
+            padding: 0;
+        }
+
+        .team-card-info .title {
+            font-size: 0.9em;
+            font-weight: 600;
+            background-color: var(--cor-principal-azul);
+            color: white;
+            padding: 10px;
+        }
+
+        .team-card-info .name {
+            font-size: 1.1em;
+            font-weight: 700;
+            background-color: var(--cor-principal-azul);
+            color: white;
+            padding: 10px;
+            border-top: 1px solid #fff3;
+        }
+        
+        /* Logo lateral MLMB */
+        .logo-sidebar {
+            flex: 1; /* Ocupa 1/4 do espaço */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-sidebar img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* === 4. BARRA INFERIOR "PILARES" === */
+        .pillars-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--cor-principal-roxo);
+            color: white;
+            padding: 20px 5%;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-top: auto; /* Garante que o rodapé fique na parte inferior */
+        }
+
+        /* === RESPONSIVIDADE === */
+
+        /* Para Tablets (ex: <= 992px) */
+        @media (max-width: 992px) {
+            .pedagogico-content {
+                flex-direction: column; /* Empilha o grid e o logo */
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+            }
+
+            .logo-sidebar {
+                padding: 20px 0;
+            }
+
+            .logo-sidebar img {
+                max-width: 200px; /* Limita o tamanho do logo */
+            }
+        }
+
+        /* Para Celulares (ex: <= 768px) */
+        @media (max-width: 768px) {
+            .top-bar {
+                justify-content: center;
+                text-align: center;
+            }
+            .top-bar-contact {
+                flex-direction: column; /* Empilha contatos */
+                gap: 5px;
+                margin-bottom: 10px;
+            }
+
+            .main-header {
+                flex-direction: column; /* Empilha logo e nav */
+                gap: 15px;
+            }
+
+            .main-nav nav ul {
+                flex-direction: column; /* Empilha links da nav */
+                text-align: center;
+                gap: 5px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr; /* 1 coluna */
+            }
+
+            .pillars-bar {
+                flex-direction: column; /* Empilha os pilares */
+                text-align: center;
+                gap: 15px;
+            }
+        }

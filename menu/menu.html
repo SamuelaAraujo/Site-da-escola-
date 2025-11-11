@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu1.css">
+    <title>Menu Escola Vertical</title>
+</head>
+<body>
+
+<header class="header-principal">
+
+    <div class="header-right">
+        <button class="hamburguer-btn" id="hamburguer-btn" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
+    </div>
+</header>
+
+<nav class="menu-vertical-opcoes" id="menu-opcoes">
+    <a href="#" class="menu-item active" data-page="mlmb">MLMB</a>
+    <a href="#" class="menu-item" data-page="sobre-nos">SOBRE NÓS</a>
+    <a href="#" class="menu-item" data-page="pedagogico">PEDAGÓGICO</a>
+    <a href="#" class="menu-item" data-page="cursos">CURSOS</a>
+    <a href="#" class="menu-item" data-page="flash-news">FLASH NEWS</a>
+    <a href="#" class="menu-item" data-page="calendario-letivo">CALENDÁRIO LETIVO</a>
+
+</nav>
+
+
+
+<script>
+    // Lógica de destaque do item ativo e do botão de hambúrguer
+    function toggleMenu() {
+        const menu = document.getElementById('menu-opcoes');
+        menu.classList.toggle('visible');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuItems = document.querySelectorAll('.menu-vertical-opcoes .menu-item');
+        const statusDisplay = document.getElementById('status-nav');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                menuItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                const page = item.getAttribute('data-page').toUpperCase().replace('-', ' ');
+                statusDisplay.innerHTML = `Página atual: **${page}**`;
+
+                document.getElementById('menu-opcoes').classList.remove('visible');
+            });
+        });
+    });
+</script>
+</body>
+</html>

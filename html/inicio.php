@@ -26,7 +26,7 @@
     <ul class="nav-links">
         <li><a href="index.html">HOME</a></li>
         <li><a href="sobre.html">SOBRE NÓS</a></li>
-        <li><a href="pedagogico.html">PEDAGÓGICO</a></li>
+        <li><a href="pedagogico/pedagogico.html">PEDAGÓGICO</a></li>
         <li><a href="cursos.html">CURSOS</a></li>
     </ul>
 </nav>

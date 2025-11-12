@@ -1,0 +1,220 @@
+/* Configurações básicas */
+body, html {
+    margin: 0; /* Remove a margem padrão do navegador */
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-x: hidden; 
+    height: 100%; 
+}
+
+/* 🖼️ IMAGEM DE FUNDO - COBRINDO TUDO E AJUSTADA */
+body {
+    background-image: url(fundo3.0.png); /* Nome da sua imagem*/
+    background-size:contain; 
+    background-repeat: no-repeat;
+    
+    /* Posição: centralizado e deslocado 20% abaixo do topo */
+    background-position: center 20%; 
+    
+    background-color: #ffffff; 
+    background-attachment: fixed; 
+    min-height: 100vh;
+}
+
+/* Barra Superior de Informações (contatos e redes sociais) */
+.top-bar {
+    background-color: rgba(126, 47, 126, 0.8);
+    color: white;
+    padding: 5px 20px;
+    font-size: 0.85em;
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px; 
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; 
+    z-index: 10;
+}
+.top-bar .social-info {
+    margin-right: 20px;
+}
+
+/* Header Principal (Logo, Nome da Escola e Navegação HOME/SOBRE NÓS/etc.) */
+header {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    /* 🛠️ ALTERAÇÃO: Diminui a largura máxima para centralizar melhor */
+    max-width: 1000px; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.school-logo-text {
+    display: flex;
+    align-items: center;
+}
+
+.small-logo {
+    width: 60px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+.school-names p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #555;
+}
+.school-names h2, .school-names h3 {
+    margin: 0;
+    font-size: 1.2em; 
+    color: #7E2F7E;
+    line-height: 1.1;
+}
+.school-names h3 {
+    font-size: 1em; 
+    color: #999;
+}
+
+/* Navegação Principal (HOME, SOBRE NÓS...) */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px; 
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #7E2F7E;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #B266B2; 
+}
+
+/* Seção Hero (Boas-vindas e texto à esquerda) */
+.hero-section {
+    padding: 50px 20px;
+    /* 🛠️ ALTERAÇÃO: Diminui a largura máxima para centralizar melhor */
+    max-width: 1000px; 
+    margin: 0 auto;
+    min-height: 350px; 
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    z-index: 5;
+}
+
+/* Caixa de Boas-vindas transparente */
+.welcome-text-box {
+    background-color: transparent; 
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: left;
+    margin-left: 0; /* Remove a margem esquerda para alinhar com o menu */
+    min-width: 250px;
+}
+.welcome-text-box p {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #333; 
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); 
+}
+.welcome-text-box p:first-child {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Seção de Conteúdo Dinâmico (onde as mensagens interativas aparecem) */
+#conteudo-dinamico {
+    /* 🛠️ ALTERAÇÃO: Ajusta a largura para acompanhar a mudança */
+    max-width: 900px; 
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 5;
+}
+
+#mensagem-interativa {
+    padding: 20px;
+    border-left: 5px solid #7E2F7E;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+#mensagem-interativa h3 {
+    color: #7E2F7E;
+}
+
+/* Classes para animação */
+.mensagem-oculta {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.mensagem-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Navegação Inferior (Botões do Quebra-cabeça) */
+.bottom-nav-puzzle {
+    background-color: #7E2F7E;
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.bottom-nav-puzzle ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.bottom-nav-puzzle ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #A052A0;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.1s;
+    display: block;
+}
+
+.bottom-nav-puzzle ul li a:hover {
+    background-color: #B266B2;
+    transform: translateY(-2px);
+}

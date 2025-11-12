@@ -10,8 +10,8 @@ body, html {
 
 /* 🖼️ IMAGEM DE FUNDO - COBRINDO TUDO E AJUSTADA */
 body {
-    background-image: url('imagem/ANOS.png'); /* Nome da sua imagem */
-    background-size: cover; 
+    background-image: url(fundo3.0.png); /* Nome da sua imagem*/
+    background-size:contain; 
     background-repeat: no-repeat;
     
     /* Posição: centralizado e deslocado 20% abaixo do topo */

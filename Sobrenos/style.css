@@ -16,45 +16,43 @@ body {
 
 /* --- Cores Principais (Baseado na Imagem) --- */
 :root {
-    --cor-principal: #6a1b9a; /* Roxo/Magenta principal */
+    --cor-principal: #a21880; /* Roxo/Magenta principal */
     --cor-texto-escuro: #333;
     --cor-fundo-caixa: #eeeeee;
     --cor-borda: #ddd;
 }
 
-/* --- 1. Barra Superior (Contatos) - ALTERADO --- */
+/* --- 1. Barra Superior (Contatos) --- */
 .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Para responsividade */
+    flex-wrap: wrap;
     background-color: var(--cor-principal);
     color: white;
     padding: 8px 5%;
     font-size: 0.9em;
 }
 
-.top-bar-left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
-.top-bar-center {
-    flex: 2; /* Dá mais espaço para o e-mail */
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
+.top-bar-left,
+.top-bar-center,
 .top-bar-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.top-bar span {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.top-bar-left {
+    justify-content: flex-start;
+}
+
+.top-bar-center {
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.top-bar-right {
+    justify-content: flex-end;
 }
 
 /* --- 2. Barra de Navegação Principal --- */
@@ -64,202 +62,229 @@ body {
     align-items: center;
     background-color: white;
     padding: 10px 5%;
-    border-bottom: 1px solid var(--cor-borda);
-    position: relative; /* Para o menu mobile */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.main-nav .logo {
-    /* O div .logo agora só serve como container */
-    display: flex;
-    align-items: center;
-}
-
-/* NOVO: Estilos para a imagem do logo principal */
-.logo-img {
-    height: 50px; /* Defina a altura do seu logo */
-    width: auto; /* A largura se ajustará automaticamente */
+.logo .logo-img {
+    height: 70px;
 }
 
 .main-nav .nav-links {
-    display: flex;
     list-style: none;
-    gap: 10px;
-}
-
-.main-nav .nav-links a {
-    text-decoration: none;
-    color: var(--cor-texto-escuro);
-    padding: 8px 15px;
-    font-weight: bold;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-}
-
-.main-nav .nav-links a.active,
-.main-nav .nav-links a:hover {
-    background-color: var(--cor-principal);
-    color: white;
-}
-
-/* --- Botão de Menu Mobile (Hamburguer) --- */
-.menu-toggle {
-    display: none; /* Escondido no desktop */
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: var(--cor-principal);
-    cursor: pointer;
-}
-
-/* --- 3. Área de Conteúdo Principal --- */
-
-/* Alteração para o rodapé ficar embaixo */
-.content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr; /* Layout de 3 colunas */
-    gap: 20px;
-    padding: 25px 5%;
-    align-items: start;
-    flex-grow: 1; /* Faz o conteúdo principal "empurrar" o rodapé para baixo */
-}
-
-/* --- Coluna Esquerda (Decorativa) --- */
-.left-decor {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    min-height: 300px; /* Para manter o espaço */
-}
-
-.decor-placeholder {
-    width: 100px;
-    height: 100px;
-    background-color: #f0f0f0;
-    border: 2px dashed #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.8em;
-    color: #777;
-    border-radius: 50%;
-    text-align: center;
+    gap: 30px;
+    flex: 1;
+    padding: 0 5%;
 }
 
-.decor-placeholder.plane {
-    border-radius: 0;
-    border: none;
-    background-color: transparent;
-    font-size: 3em;
-}
+.main-nav .nav-links li a {
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.3s ease;
 
-/* --- Coluna Central (Conteúdo com Scroll) --- */
-.main-content-box {
-    background-color: var(--cor-fundo-caixa);
-    border-radius: 15px;
-    padding: 25px;
-    position: relative;
-
-    /* --- AQUI ESTÁ O "SCROL FUNCIONAL" --- */
-    max-height: 65vh; /* 65% da altura da tela */
-    overflow-y: auto; /* Adiciona rolagem vertical automaticamente */
-}
-
-/* Estilização da barra de rolagem (opcional, mas igual à imagem) */
-.main-content-box::-webkit-scrollbar {
-    width: 8px;
-}
-.main-content-box::-webkit-scrollbar-thumb {
-    background-color: #aaa;
-    border-radius: 4px;
-}
-.main-content-box::-webkit-scrollbar-track {
-    background-color: var(--cor-fundo-caixa);
-}
-
-.content-header-decor {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.main-nav .nav-links li a:hover {
+    color: var(--cor-principal);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-principal);
+}
+
+/* --- ESTILOS PARA LOGO COM TEXTO --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--cor-principal);
+    white-space: nowrap;
+}
+
+
+/* --- 3. Conteúdo Principal --- */
+.content-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 20px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.main-content {
+    flex: 3;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.main-content h1 {
+    color: var(--cor-principal);
     margin-bottom: 20px;
 }
 
-.content-header-decor .decor-placeholder {
-    width: 60px;
-    height: 60px;
-}
-
-.main-content-box h2 {
-    color: var(--cor-texto-escuro);
-    margin-bottom: 15px;
-    font-size: 1.4em;
-}
-
-.main-content-box p {
+.main-content p {
     line-height: 1.6;
-    color: #555;
     margin-bottom: 15px;
 }
 
-/* --- Coluna Direita (Sidebar) --- */
+.main-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS PARA O CARTÃO INTRODUTÓRIO COM ÍCONES --- */
+.intro-card {
+    background-color: var(--cor-fundo-caixa);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    padding-top: 50px;
+}
+
+.intro-card h2 {
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-card p {
+    font-size: 1.05em;
+    text-align: justify;
+}
+
+.card-icons {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card-icon-left, .card-icon-right {
+    font-size: 2.5em;
+    color: rgba(162, 24, 128, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* --- ESTILOS PARA O AVIÃO DE PAPEL --- */
+.paper-plane-container {
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-25deg);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.paper-plane-icon {
+    font-size: 4em;
+    color: var(--cor-principal);
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+}
+
+
 .right-sidebar {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    padding: 20px;
+    background-color: var(--cor-fundo-caixa);
+    border-radius: 8px;
+    height: fit-content;
 }
 
-/* NOVO: Estilos para a imagem do logo alternativo */
-.logo-alt-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Mantém o formato circular como na imagem */
-    object-fit: cover; /* Garante que a imagem preencha o círculo */
-    border: 3px solid #ccc; /* Borda opcional */
+.right-sidebar .logo-alt-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .right-sidebar .mlmb-text {
-    font-size: 5em;
+    font-size: 2em;
     font-weight: bold;
     color: var(--cor-principal);
-    line-height: 1;
 }
 
-/* --- 4. Barra Inferior (Footer) --- */
+/* --- 4. Rodapé --- */
 .bottom-bar {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+    font-weight: bold;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap; /* Para responsividade */
-    background-color: var(--cor-principal);
-    color: white;
-    padding: 15px 5%;
-    font-weight: bold;
-    /* Não precisa mais de "position: fixed" ou "sticky" por causa do "flex-grow" no main */
+    margin-top: auto;
 }
 
-/* --- 5. Responsividade (Telas Pequenas) --- */
-@media (max-width: 992px) {
-    /* Em telas menores, as colunas decorativas somem */
-    .content-wrapper {
-        grid-template-columns: 1fr; /* Coluna única */
+.bottom-bar span {
+    padding: 5px 10px;
+}
+
+/* --- 5. Responsividade (Media Queries) --- */
+
+/* Ajuste em telas médias (tablets) */
+@media (max-width: 1024px) {
+    .content-container {
+        flex-direction: column;
     }
 
-    .left-decor,
     .right-sidebar {
-        display: none; /* Esconde colunas laterais */
+        flex: none;
+        width: 100%;
     }
 
-    .main-content-box {
-        max-height: none; /* Remove a altura máxima no mobile */
-        overflow-y: visible; /* Deixa a página inteira rolar */
+    .paper-plane-container {
+        left: -50px;
+        font-size: 0.8em;
     }
 }
 
+/* Ajuste em telas de celular */
 @media (max-width: 768px) {
-    /* Em telas de celular */
+    /* Barra Superior: Ajuste de espaçamento para não ficar apertado */
     .top-bar {
-        flex-direction: column; /* Empilha os itens */
+        flex-direction: column;
         gap: 5px;
         padding: 10px;
     }
@@ -270,50 +295,89 @@ body {
     .top-bar-right {
         flex: 1;
         justify-content: center;
-    }
-
-    .top-bar-center {
-        font-size: 0.9em; /* Reduz um pouco o e-mail se for longo */
+        /* Reduz o tamanho da fonte para encaixar o e-mail */
+        font-size: 0.8em;
     }
 
     /* Esconde o menu principal e mostra o botão */
     .main-nav .nav-links {
-        display: none; /* Esconde os links */
+        display: none;
         flex-direction: column;
         width: 100%;
         background-color: white;
         position: absolute;
-        top: 100%; /* Abaixo do cabeçalho */
+        top: 90px;
         left: 0;
         border-top: 1px solid var(--cor-borda);
-    }
-
-    /* Estilo para quando o menu está "aberto" (via JS) */
-    .main-nav .nav-links.active {
-        display: flex;
+        padding: 0;
     }
 
     .main-nav .nav-links li {
         width: 100%;
         text-align: center;
+        border-bottom: 1px solid var(--cor-fundo-caixa);
     }
 
-    .main-nav .nav-links a {
-        display: block;
-        width: 100%;
-        border-radius: 0;
+    .main-nav .nav-links li a {
+        padding: 15px 0;
+        justify-content: center;
+    }
+
+
+    /* Estilo para quando o menu está "aberto" (via JS) */
+    .main-nav .nav-links.active {
+        display: flex;
+        max-height: 500px;
     }
 
     .menu-toggle {
-        display: block; /* Mostra o botão hamburguer */
+        display: block;
     }
 
-    .content-wrapper {
-        padding: 15px;
+    .main-nav {
+        flex-wrap: wrap;
     }
 
+    .main-nav .logo {
+        flex-grow: 1;
+    }
+
+    /* ESCONDE O TEXTO DA LOGO NO MOBILE */
+    .logo-text {
+        display: none;
+    }
+
+    /* Rodapé */
     .bottom-bar {
-        font-size: 0.9em;
+        flex-direction: column;
         gap: 10px;
+    }
+
+    /* Novo Ajuste: Reduz o tamanho do título no cartão para caber */
+    .intro-card h2 {
+        font-size: 1.2em;
+    }
+
+    /* Ajuste na posição do avião de papel */
+    .paper-plane-container {
+        left: -40px;
+        font-size: 0.6em;
+        top: 30%;
+    }
+}
+
+/* Novo Ajuste: Otimização para celulares muito pequenos (menos de 480px) */
+@media (max-width: 480px) {
+    .logo .logo-img {
+        height: 60px; /* Reduz um pouco mais o logo */
+    }
+
+    .intro-card {
+        padding: 15px;
+        padding-top: 40px;
+    }
+
+    .intro-card h2 {
+        font-size: 1.1em;
     }
 }

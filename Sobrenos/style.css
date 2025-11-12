@@ -1,0 +1,383 @@
+/* --- Configurações Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Alteração para o rodapé ficar embaixo */
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+}
+
+/* --- Cores Principais (Baseado na Imagem) --- */
+:root {
+    --cor-principal: #a21880; /* Roxo/Magenta principal */
+    --cor-texto-escuro: #333;
+    --cor-fundo-caixa: #eeeeee;
+    --cor-borda: #ddd;
+}
+
+/* --- 1. Barra Superior (Contatos) --- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 8px 5%;
+    font-size: 0.9em;
+}
+
+.top-bar-left,
+.top-bar-center,
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.top-bar-left {
+    justify-content: flex-start;
+}
+
+.top-bar-center {
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.top-bar-right {
+    justify-content: flex-end;
+}
+
+/* --- 2. Barra de Navegação Principal --- */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo .logo-img {
+    height: 70px;
+}
+
+.main-nav .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+    padding: 0 5%;
+}
+
+.main-nav .nav-links li a {
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.main-nav .nav-links li a:hover {
+    color: var(--cor-principal);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-principal);
+}
+
+/* --- ESTILOS PARA LOGO COM TEXTO --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--cor-principal);
+    white-space: nowrap;
+}
+
+
+/* --- 3. Conteúdo Principal --- */
+.content-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 20px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.main-content {
+    flex: 3;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.main-content h1 {
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.main-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS PARA O CARTÃO INTRODUTÓRIO COM ÍCONES --- */
+.intro-card {
+    background-color: var(--cor-fundo-caixa);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    padding-top: 50px;
+}
+
+.intro-card h2 {
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-card p {
+    font-size: 1.05em;
+    text-align: justify;
+}
+
+.card-icons {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card-icon-left, .card-icon-right {
+    font-size: 2.5em;
+    color: rgba(162, 24, 128, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* --- ESTILOS PARA O AVIÃO DE PAPEL --- */
+.paper-plane-container {
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-25deg);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.paper-plane-icon {
+    font-size: 4em;
+    color: var(--cor-principal);
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+}
+
+
+.right-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cor-fundo-caixa);
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.right-sidebar .logo-alt-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.right-sidebar .mlmb-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+/* --- 4. Rodapé --- */
+.bottom-bar {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+}
+
+.bottom-bar span {
+    padding: 5px 10px;
+}
+
+/* --- 5. Responsividade (Media Queries) --- */
+
+/* Ajuste em telas médias (tablets) */
+@media (max-width: 1024px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .right-sidebar {
+        flex: none;
+        width: 100%;
+    }
+
+    .paper-plane-container {
+        left: -50px;
+        font-size: 0.8em;
+    }
+}
+
+/* Ajuste em telas de celular */
+@media (max-width: 768px) {
+    /* Barra Superior: Ajuste de espaçamento para não ficar apertado */
+    .top-bar {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    /* Centraliza todos os itens no mobile */
+    .top-bar-left,
+    .top-bar-center,
+    .top-bar-right {
+        flex: 1;
+        justify-content: center;
+        /* Reduz o tamanho da fonte para encaixar o e-mail */
+        font-size: 0.8em;
+    }
+
+    /* Esconde o menu principal e mostra o botão */
+    .main-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        border-top: 1px solid var(--cor-borda);
+        padding: 0;
+    }
+
+    .main-nav .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--cor-fundo-caixa);
+    }
+
+    .main-nav .nav-links li a {
+        padding: 15px 0;
+        justify-content: center;
+    }
+
+
+    /* Estilo para quando o menu está "aberto" (via JS) */
+    .main-nav .nav-links.active {
+        display: flex;
+        max-height: 500px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+    }
+
+    .main-nav .logo {
+        flex-grow: 1;
+    }
+
+    /* ESCONDE O TEXTO DA LOGO NO MOBILE */
+    .logo-text {
+        display: none;
+    }
+
+    /* Rodapé */
+    .bottom-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Novo Ajuste: Reduz o tamanho do título no cartão para caber */
+    .intro-card h2 {
+        font-size: 1.2em;
+    }
+
+    /* Ajuste na posição do avião de papel */
+    .paper-plane-container {
+        left: -40px;
+        font-size: 0.6em;
+        top: 30%;
+    }
+}
+
+/* Novo Ajuste: Otimização para celulares muito pequenos (menos de 480px) */
+@media (max-width: 480px) {
+    .logo .logo-img {
+        height: 60px; /* Reduz um pouco mais o logo */
+    }
+
+    .intro-card {
+        padding: 15px;
+        padding-top: 40px;
+    }
+
+    .intro-card h2 {
+        font-size: 1.1em;
+    }
+}

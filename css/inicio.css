@@ -85,7 +85,7 @@ body {
     overflow: hidden;
 
     /* === PROPRIEDADES DO BANNER COM ANOS.jpg === */
-    background-image: url('imagem/ANOS.png'); /* ATENÇÃO: Confirme o caminho da sua imagem */
+    background-image: url('../Sobrenos/imagem/ANOS.png'); /* ATENÇÃO: Confirme o caminho da sua imagem */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

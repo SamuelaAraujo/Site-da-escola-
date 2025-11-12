@@ -1,0 +1,430 @@
+/* Importação de uma fonte similar */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:root {
+    --primary-color: #92278F; /* Roxo principal */
+    --red-card: #C0392B;     /* Preparatório ENEM */
+    --blue-card: #3498DB;    /* Análises Químicas */
+    --dev-sistema: #2ECC71;  /* Desenvolvimento de Sistema - Verde Esmeralda */
+    --aut-industrial: #4A69BD; /* Automação Industrial - Azul Escuro */
+    --ener-renovavel: #9B59B6; /* Energia Renovável - Roxo/Magenta */
+    --mecanica: #27AE60;     /* Mecânica - Verde Bandeira */
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #F8F8F8;
+    color: var(--text-dark);
+}
+
+/* --- Top Bar e Header --- */
+.top-bar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    border-bottom: 2px solid #EFEFEF;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.school-name {
+    font-size: 0.8em;
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.btn-cursos {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 40px !important;
+}
+
+.btn-cursos a {
+    color: var(--text-light) !important;
+}
+
+/* --- Content e Grid de Cursos --- */
+.content {
+    padding: 30px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-grid {
+    display: grid;
+    /* Padrão Desktop: 3 colunas de curso + 1 para a side-info */
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    gap: 20px;
+    max-height: 800px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Estilo da barra de rolagem (opcional) */
+.course-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.course-grid::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.course-card {
+    height: 180px;
+    color: var(--text-light);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.1em;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-repeat: no-repeat;
+    /* Ajustes para a imagem de fundo preencher o card */
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Cores e Imagens (CORRIGIDO PARA CAMINHOS DE ARQUIVO SIMPLES) */
+.red {
+    background-color: var(--red-card);
+    /* Preparatório ENEM */
+    background-image: url('../imagem/Enem.png');
+    background-size: cover;
+}
+.blue {
+    background-color: var(--blue-card);
+    /* Análises Químicas */
+    background-image: url('../imagem/quimica.png');
+    background-size: cover;
+}
+.black {
+    background-color: var(--dev-sistema);
+    /* Desenvolvimento de Sistema */
+    background-image: url('../imagem/desenvolvimentoSistema.png');
+    background-size: cover;
+}
+.purple {
+    background-color: var(--aut-industrial);
+    /* Automação Industrial */
+    background-image: url('../imagem/industrial.png');
+    background-size: cover;
+}
+.magenta {
+    background-color: var(--ener-renovavel);
+    /* Energia Renovável */
+    background-image: url('../imagem/energiaRenovavel.png');
+    background-size: cover;
+}
+.green {
+    background-color: var(--mecanica);
+    /* Mecânica */
+    background-image: url('../imagem/mecanica.png');
+    background-size: cover;
+}
+
+
+.card-content {
+    /* Garante que o texto fique na parte inferior */
+    align-self: flex-end;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+/* Side Info (Logo Grande) */
+.side-info {
+    grid-column: 4 / 5;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.large-logo {
+    width: 180px;
+}
+
+.mlmb-text {
+    font-size: 4em;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-top: -20px;
+    letter-spacing: -2px;
+}
+
+.feedback-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #FFF3CD;
+    color: #856404;
+    border: 1px solid #FFEEBA;
+    border-radius: 5px;
+    display: none;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+.bottom-bar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    color: var(--text-light);
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.footer-item {
+    cursor: default;
+}
+
+
+/* ------------------------------------- */
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+/* ------------------------------------- */
+
+/* Tablet e Telas Médias (1024px e abaixo): 2 Colunas de Curso + 1 Side Info */
+@media (max-width: 1024px) {
+    .main-nav {
+        padding: 10px 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .course-grid {
+        /* Muda para 2 colunas de curso + 1 para a side-info */
+        grid-template-columns: repeat(2, 1fr) 1.5fr;
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+
+    .side-info {
+        /* Mantém a Side Info na 3ª coluna */
+        grid-column: 3 / 4;
+        grid-row: 1 / span 3;
+        padding-top: 20px;
+    }
+
+    .mlmb-text {
+        font-size: 3em;
+    }
+}
+
+/* Mobile e Telas Pequenas (768px e abaixo): 1 Coluna */
+@media (max-width: 768px) {
+    /* Topo: Itens empilhados */
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        gap: 5px;
+        font-size: 0.8em;
+    }
+
+    /* Navegação: Itens empilhados */
+    .main-nav {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav ul li {
+        margin: 5px 10px;
+    }
+
+    .btn-cursos {
+        margin-left: 10px !important;
+    }
+
+    /* Grid: Uma única coluna para todos os elementos (cards e side-info) */
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .course-card {
+        height: 150px;
+        font-size: 1em;
+    }
+
+    /* Side Info: Move para o final (abaixo dos cards) */
+    .side-info {
+        grid-column: 1 / 2;
+        grid-row: auto;
+        padding-top: 0;
+        margin-top: 20px;
+    }
+
+    .large-logo {
+        width: 150px;
+    }
+
+    .mlmb-text {
+        font-size: 3em;
+    }
+
+    /* Footer: Itens adaptáveis */
+    .bottom-bar {
+        font-size: 1em;
+        padding: 15px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* ... (Seu código CSS anterior) ... */
+
+/* --- Content e Grid de Cursos --- */
+.content {
+    padding: 30px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NOVO: Adiciona margem na parte inferior do conteúdo principal */
+/* O valor (70px) deve ser maior que a altura do rodapé fixo (aprox. 60px) */
+.body-content {
+    margin-bottom: 70px;
+}
+
+
+/* ... (Restante do código do course-grid e side-info) ... */
+
+/* --- Footer --- (AJUSTADO PARA FIXO) --- */
+.bottom-bar {
+    /* Tornar o rodapé fixo na parte inferior da tela */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+
+    /* Estilos visuais mantidos */
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    color: var(--text-light);
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.footer-item {
+    cursor: default;
+}
+
+
+/* ... (Seu código de responsividade/media queries abaixo) ... */
+
+/* ... (Seu código CSS anterior) ... */
+
+.main-nav {
+    display: flex;
+    /* Remove 'justify-content: space-between' */
+    align-items: center;
+    padding: 10px 50px;
+    border-bottom: 2px solid #EFEFEF;
+}
+
+/* NOVO: Centraliza a lista de links na horizontal */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    /* Permite que a lista use o espaço restante para centralizar */
+    flex-grow: 1;
+    /* Centraliza a lista horizontalmente no espaço flexível disponível */
+    justify-content: center;
+
+    /* Remove a margem esquerda anterior e usa '0 auto' para centralizar */
+    margin: 0 auto;
+    padding-right: 200px; /* Adiciona padding para compensar a largura da logo/texto à esquerda */
+}
+
+/* Ajusta o botão "CURSOS" para não interferir na centralização */
+.btn-cursos {
+    /* Mantém a estilização do botão, mas remove o margin-left que havia no item anterior */
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 20px !important;
+}
+
+/* ... (Restante do seu código CSS) ... */

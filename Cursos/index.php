@@ -22,10 +22,10 @@
             </div>
         </div>
         <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">SOBRE NÓS</a></li>
-            <li><a href="#">PEDAGÓGICO</a></li>
-            <li class="btn-cursos"><a href="#">CURSOS</a></li>
+            <li><a href="../pagina%20incial/pagina%20incial.html">HOME</a></li>
+            <li><a href="../Sobrenos/index.html">SOBRE NÓS</a></li>
+            <li><a href="../pedagogico/pedagogico.html">PEDAGÓGICO</a></li>
+            <li class="btn-cursos"><a href="../Cursos/index.php">CURSOS</a></li>
         </ul>
     </nav>
 </header>

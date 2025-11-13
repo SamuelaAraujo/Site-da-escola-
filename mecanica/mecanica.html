@@ -1,65 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E.E. Maria Luiza Miranda Bastos</title>
+    <title>Escola Estadual Maria Luiza Miranda Bastos</title>
+    
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <header class="top-bar">
-        <span>(31) 3443-7477</span>
-        <span>escola.2500.pedagogico@educacao.mg.gov.br</span>
-        <span>@mlmb_oficial</span>
+        <div class="container">
+            <span><i class="fas fa-phone"></i> (31) 3443-7477</span>
+            <span><i class="fas fa-envelope"></i> escola.2500.pedagogico@educacao.mg.gov.br</span>
+            <span><i class="fab fa-instagram"></i> @mlmb_oficial</span>
+        </div>
     </header>
 
     <nav class="main-nav">
-        <div class="logo">
-            <img src="https://via.placeholder.com/40" alt="Logo MLMB">
-            <span>Escola Estadual<br>Maria Luiza Miranda Bastos</span>
+        <div class="container">
+            <div class="logo">
+                <img src="imagens/logo.png-removebg-preview.png" alt="Logo MLMB">
+                <div class="logo-text">
+                    <span>Escola Estadual</span>
+                    <strong>Maria Luiza Miranda Bastos</strong>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">SOBRE NÓS</a></li>
+                <li><a href="#">PEDAGÓGICO</a></li>
+                <li><a href="#" class="active">CURSOS</a></li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">SOBRE NÓS</a></li>
-            <li><a href="#">PEDAGÓGICO</a></li>
-            <li><a href="#" class="active">CURSOS</a></li>
-        </ul>
     </nav>
 
-    <main class="container">
-        <section class="card left-card">
-            <h2>CURSO PROPEDÊUTICO</h2>
-            <img src="https://via.placeholder.com/150" alt="Ilustração de Estudo">
-            <h1>MLMB</h1>
-            <button id="matricula-btn">INSCREVA SEU FILHO AGORA!</button>
-        </section>
+    <main class="content-container">
+        <div class="container">
+            
+            <aside class="card-energia">
+                <div class="card-header">
+                    
+                </div>
+                <img src="mecanica/mecanica.png" alt="Energia Renovável" class="card-image">
+                <div class="mlmb-logo">MLMB</div>
+                <a href="#" class="btn-matricular">
+                    MATRICULE JÁ <br> SEU FILHO!
+                </a>
+            </aside>
 
-        <section class="card info-card">
-            <p><strong>Prezado Sr(a). [Nome do Pai/Mãe],</strong></p>
-            <p>Espero que esta mensagem o(a) encontre bem!</p>
-            <p>Escrevo hoje com uma oportunidade especial para o(a) [Nome do Aluno] potencializar ainda mais o aprendizado e construir bases sólidas para um futuro brilhante. Trata-se do nosso <strong>Curso Propedêutico</strong>.</p>
-            <p>Sabemos que a educação é a herança mais valiosa que podemos oferecer aos nossos filhos. E, às vezes, um pequeno reforço no momento certo faz toda a diferença para que eles não apenas acompanhem a turma, mas se destaquem com confiança.</p>
-
-            <p><strong>O que o seu filho ganha com o Propedêutico?</strong></p>
-            <ul class="bullet-list">
-                <li><strong>Alicerce Forte:</strong> O curso vai reforçar os conceitos fundamentais de Português e Matemática, disciplinas essenciais para todas as áreas do conhecimento. É como fortalecer as raízes de uma árvore para que ela cresça mais alta e resistente.</li>
-                <li><strong>Segurança e Autoconfiança:</strong> Ao preencher possíveis lacunas de aprendizado, ele se sentirá muito mais seguro e preparado para os desafios do ano letivo, perdendo o medo de novas matérias.</li>
+           <section class="card-texto">
+            <button class="close-btn" title="Fechar">&times;</button>
+            
+            <p><strong>Prezado Sr. [ Pai ],</strong></p>
+            <p>Espero que esta mensagem o encontre bem.</p>
+            <p>Escrevo para apresentar uma oportunidade única para o seu filho, [Nome do Aluno]: o nosso **Curso de Energia Renovável**.</p>
+            <p>Este não é um curso comum. É um investimento direto no futuro profissional do seu filho. A energia limpa é um dos setores que mais crescem no mundo, com alta demanda por técnicos e especialistas qualificados.</p>
+            
+            <p>Ao se matricular, ele aprenderá sobre:</p>
+            <ul>
+                <li>Sistemas de Energia Solar Fotovoltaica</li>
+                <li>Energia Eólica</li>
+                <li>Eficiência Energética</li>
+                <li>Instalação e Manutenção de Equipamentos</li>
             </ul>
+            
+            <p>É uma formação técnica de alto valor, que prepara o aluno para um mercado de trabalho promissor e bem remunerado desde cedo.</p>
+            <p>Estamos com vagas abertas e ficaremos honrados em contribuir para a construção de uma carreira sólida e de sucesso para o seu filho.</p>
+            <p>Ficamos à disposição para qualquer esclarecimento.</p>
         </section>
 
-        <aside class="sidebar">
-            <img src="https://via.placeholder.com/100" alt="Logo MLMB Vertical">
-        </aside>
+
+            <aside class="sidebar-right">
+                <img src="imagens/logo.png-removebg-preview.png" alt="Logo MLMB Grande" class="sidebar-logo-img">
+                <div class="sidebar-logo-text">MLMB</div>
+            </aside>
+            
+        </div>
     </main>
 
-    <footer class="main-footer">
-        <a href="#">CONHECER</a>
-        <a href="#">SER</a>
-        <a href="#">CONVIVER</a>
-        <a href="#">FAZER</a>
+    <footer class="bottom-bar">
+        <div class="container">
+            <span>CONHECER</span>
+            <span>SER</span>
+            <span>CONVIVER</span>
+            <span>FAZER</span>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 :root {
     --color-dark-purple: #a21880;
     --color-medium-purple: #9b59b6;
-    --color-darker-medium-purple: #3c5295; /* O card de texto é mais escuro */
+    --color-darker-medium-purple: #8e44ad; /* O card de texto é mais escuro */
     --color-bright-blue: #0000ff;
     --color-white: #ffffff;
     --color-dark-text: #333333;
@@ -124,7 +124,7 @@ body {
 
 /* Coluna Esquerda: Card Energia */
 .card-energia {
-    background-color: #3c5295;
+    background-color: #049ee0;
     color: var(--color-white);
     border-radius: 10px;
     padding: 20px;
@@ -138,7 +138,7 @@ body {
 }
 
 .card-energia .card-header {
-    background-color: #3c5295; /* Faixa roxa mais escura */
+    background-color: #049ee0; /* Faixa roxa mais escura */
     width: 100%;
     padding: 8px;
     border-radius: 5px;
@@ -157,7 +157,7 @@ body {
 .card-energia .mlmb-logo {
     font-size: 3em;
     font-weight: 900; /* Extra-bold */
-    color: var(--color-white);
+    color: #049ee0;
     margin-bottom: 15px;
 }
 
@@ -179,7 +179,7 @@ body {
 
 /* Coluna Central: Card Texto */
 .card-texto {
-    background-color: #3c5295;
+    background-color: #049ee0;
     color: var(--color-white);
     border-radius: 10px;
     padding: 20px;

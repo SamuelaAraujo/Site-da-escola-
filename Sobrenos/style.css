@@ -34,6 +34,11 @@ body {
     font-size: 0.9em;
 }
 
+.top-bar a{
+    text-decoration: none;
+    color: white;
+}
+
 .top-bar-left,
 .top-bar-center,
 .top-bar-right {

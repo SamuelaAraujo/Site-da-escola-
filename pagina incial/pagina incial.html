@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -43,42 +44,19 @@
 <section class="carousel">
     <div class="slides">
         <div class="slide active"><img src="img/img_1.png" alt="Imagem 1"></div>
-        <div class="slide active"><img src="img/img_2.png" alt="Imagem 2"></div>
+        <div class="slide"><img src="img/img_2.png" alt="Imagem 2"></div>
     </div>
 </section>
 
 <!-- Rodapé inferior -->
 <footer class="bottom-bar">
-    <div class="footer-links">
-        <a href="#">CONHECER</a>
-        <a href="#">SER</a>
-        <a href="#">CONVIVER</a>
-        <a href="#">FAZER</a>
-    </div>
+    <div class="footer-item">CONHECER</div>
+    <div class="footer-item">SER</div>
+    <div class="footer-item">CONVIVER</div>
+    <div class="footer-item">FAZER</div>
 </footer>
 
-<script>
-    // --- Carrossel Automático ---
-    let slides = document.querySelectorAll(".slide");
-    let current = 0;
+<script src="script.js"></script>
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove("active"));
-        slides[index].classList.add("active");
-    }
-
-    setInterval(() => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-    }, 4000);
-
-    // --- Menu Responsivo ---
-    const menuIcon = document.querySelector(".menu-icon");
-    const navLinks = document.querySelector(".nav-links");
-
-    menuIcon.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-</script>
 </body>
 </html>

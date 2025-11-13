@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escola Estadual Maria Luiza Miranda Bastos</title>
+    <link rel="stylesheet" href="pagina%20inicial.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!-- Barra superior -->
+<header class="top-bar">
+    <div class="contact-info">
+        <i class="fa-solid fa-phone"></i> (31) 3443-7477
+        <i class="fa-solid fa-envelope"></i> escola.2500.pedagogico@educacao.mg.gov.br
+        <a href="#" class="social"><i class="fa-brands fa-instagram"></i> @mlmb_oficial</a>
+    </div>
+</header>
+
+<!-- Navegação -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="img/img.png" alt="Logo da Escola" />
+        <div class="logo-text">
+            <h4>Escola Estadual</h4>
+            <p>Maria Luiza Miranda Bastos</p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">SOBRE NÓS</a></li>
+        <li><a href="#">PEDAGÓGICO</a></li>
+        <li><a href="#">CURSOS</a></li>
+    </ul>
+
+    <div class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</nav>
+
+<!-- Carrossel central -->
+<section class="carousel">
+    <div class="slides">
+        <div class="slide active"><img src="img/img_1.png" alt="Imagem 1"></div>
+        <div class="slide active"><img src="img/img_2.png" alt="Imagem 2"></div>
+    </div>
+</section>
+
+<!-- Rodapé inferior -->
+<footer class="bottom-bar">
+    <div class="footer-links">
+        <a href="#">CONHECER</a>
+        <a href="#">SER</a>
+        <a href="#">CONVIVER</a>
+        <a href="#">FAZER</a>
+    </div>
+</footer>
+
+<script>
+    // --- Carrossel Automático ---
+    let slides = document.querySelectorAll(".slide");
+    let current = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+    }
+
+    setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }, 4000);
+
+    // --- Menu Responsivo ---
+    const menuIcon = document.querySelector(".menu-icon");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+</script>
+</body>
+</html>

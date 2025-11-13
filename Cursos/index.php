@@ -11,8 +11,7 @@
     <div class="top-bar">
         <span>(31) 3443-7477</span>
         <span>📧 escola.2500.pedagogico@educacao.mg.gov.br</span>
-        <span>📸 @mlmb_oficial</span>
-    </div>
+        <a href="https://www.instagram.com/mlmb_oficial/"><i class="fab fa-instagram"></i>@mlmb_oficial</a>    </div>
     <nav class="main-nav">
         <div class="logo-area">
             <img src="imagem/logo.png-removebg-preview.png" alt="Logo MLMB" class="logo">
@@ -35,32 +34,32 @@
     <section class="course-grid">
         <div class="course-card red" data-course-name="Preparatório ENEM">
             <div class="card-content">
-                PREPARATÓRIO ENEM
+
             </div>
         </div>
         <div class="course-card blue" data-course-name="Análises Químicas">
             <div class="card-content">
-                ANÁLISES QUÍMICAS
+
             </div>
         </div>
         <div class="course-card black" data-course-name="Desenvolvimento de Sistema">
             <div class="card-content">
-                DESENVOLVIMENTO DE SISTEMA
+
             </div>
         </div>
         <div class="course-card purple" data-course-name="Automação Industrial">
             <div class="card-content">
-                AUTOMAÇÃO INDUSTRIAL
+
             </div>
         </div>
         <div class="course-card magenta" data-course-name="Energia Renovável">
             <div class="card-content">
-                ENERGIA RENOVÁVEL
+
             </div>
         </div>
         <div class="course-card green" data-course-name="Mecânica">
             <div class="card-content">
-                MECÂNICA
+               
             </div>
         </div>
 

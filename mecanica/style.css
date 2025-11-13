@@ -1,0 +1,69 @@
+/* Fix para garantir que o fundo geral é o cinza e tirar qualquer margem indesejada */
+* {
+    box-sizing: border-box;
+    margin: 0; /* Remove margens do corpo da página */
+    padding: 0; /* Remove preenchimentos do corpo da página */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fundo cinza claro */
+}
+
+/* ... o resto do seu CSS permanece o mesmo até a parte dos cards ... */
+
+/* Card da Esquerda (PROPEDÊUTICO) */
+.propedutico-card {
+    flex-basis: 25%; /* Largura do card */
+    background-color: #e1bee7; /* Nova cor (Lavanda clara) para o Propedêutico */
+    text-align: center;
+}
+
+.propedutico-card img {
+    width: 100%;
+    max-width: 150px;
+    margin: 15px 0;
+}
+
+.propedutico-card h1 {
+    color: #5d3a9b; /* Roxo */
+    margin: 10px 0;
+}
+
+.propedutico-card button {
+    background-color: #1e88e5; /* Azul */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.propedutico-card button:hover {
+    background-color: #1565c0; /* Azul mais escuro */
+}
+
+/* Card do Meio (Informações) - Mantido o verde escuro */
+.info-card {
+    flex-basis: 50%;
+    background-color: #2e7d32; /* Verde escuro */
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.info-card ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    list-style-type: disc;
+}
+
+.info-card li {
+    margin-bottom: 8px;
+}
+
+/* ... o resto do seu CSS (sidebar e footer) ... */

@@ -1,220 +1,166 @@
-/* Configurações básicas */
-body, html {
-    margin: 0; /* Remove a margem padrão do navegador */
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    overflow-x: hidden; 
-    height: 100%; 
-}
-
-/* 🖼️ IMAGEM DE FUNDO - COBRINDO TUDO E AJUSTADA */
-body {
-    background-image: url('imagem/ANOS.png'); /* Nome da sua imagem */
-    background-size: cover; 
-    background-repeat: no-repeat;
-    
-    /* Posição: centralizado e deslocado 20% abaixo do topo */
-    background-position: center 20%; 
-    
-    background-color: #ffffff; 
-    background-attachment: fixed; 
-    min-height: 100vh;
-}
-
-/* Barra Superior de Informações (contatos e redes sociais) */
-.top-bar {
-    background-color: rgba(126, 47, 126, 0.8);
-    color: white;
-    padding: 5px 20px;
-    font-size: 0.85em;
-    display: flex;
-    justify-content: flex-end;
-    gap: 25px; 
-    width: 100%;
+/* Configuração global (para remover sobras brancas indesejadas) */
+* {
     box-sizing: border-box;
-    position: relative; 
-    z-index: 10;
-}
-.top-bar .social-info {
-    margin-right: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header Principal (Logo, Nome da Escola e Navegação HOME/SOBRE NÓS/etc.) */
-header {
-    background-color: rgba(255, 255, 255, 0.9); 
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 10;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fundo cinza claro, para contrastar com os cards */
 }
 
-.header-content {
-    /* 🛠️ ALTERAÇÃO: Diminui a largura máxima para centralizar melhor */
-    max-width: 1000px; 
-    width: 100%;
+/* 1. Cabeçalho Superior */
+.top-bar {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    padding: 8px 10%;
+    background-color: #f0f0f0;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 2. Navegação Principal */
+.main-nav {
+    display: flex;
     justify-content: space-between;
-}
-
-.school-logo-text {
-    display: flex;
     align-items: center;
+    padding: 15px 10%;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
 }
 
-.small-logo {
-    width: 60px; 
-    height: auto;
+.main-nav .logo {
+    display: flex; /* Para alinhar logo e texto */
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.main-nav .logo img {
     margin-right: 10px;
 }
 
-.school-names p {
-    margin: 0;
-    font-size: 0.8em;
-    color: #555;
-}
-.school-names h2, .school-names h3 {
-    margin: 0;
-    font-size: 1.2em; 
-    color: #7E2F7E;
-    line-height: 1.1;
-}
-.school-names h3 {
-    font-size: 1em; 
-    color: #999;
-}
-
-/* Navegação Principal (HOME, SOBRE NÓS...) */
 .main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    gap: 25px; 
+    list-style: none;
 }
 
 .main-nav ul li a {
     text-decoration: none;
-    color: #7E2F7E;
+    color: #555;
     font-weight: bold;
-    font-size: 1em;
-    padding: 5px 0;
-    transition: color 0.3s;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
 }
 
-.main-nav ul li a:hover {
-    color: #B266B2; 
+/* Link Ativo (CURSOS) - Cor Roxo da imagem */
+.main-nav ul li a.active {
+    background-color: #5d3a9b;
+    color: #fff;
 }
 
-/* Seção Hero (Boas-vindas e texto à esquerda) */
-.hero-section {
-    padding: 50px 20px;
-    /* 🛠️ ALTERAÇÃO: Diminui a largura máxima para centralizar melhor */
-    max-width: 1000px; 
-    margin: 0 auto;
-    min-height: 350px; 
+/* 3. Conteúdo Principal */
+.container {
     display: flex;
-    align-items: flex-start;
-    position: relative;
-    z-index: 5;
+    padding: 20px 10%;
+    gap: 20px;
 }
 
-/* Caixa de Boas-vindas transparente */
-.welcome-text-box {
-    background-color: transparent; 
-    padding: 20px 30px;
-    border-radius: 8px;
-    text-align: left;
-    margin-left: 0; /* Remove a margem esquerda para alinhar com o menu */
-    min-width: 250px;
-}
-.welcome-text-box p {
-    margin: 5px 0;
-    font-size: 1.2em;
-    color: #333; 
-    line-height: 1.4;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); 
-}
-.welcome-text-box p:first-child {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
-}
-
-
-/* Seção de Conteúdo Dinâmico (onde as mensagens interativas aparecem) */
-#conteudo-dinamico {
-    /* 🛠️ ALTERAÇÃO: Ajusta a largura para acompanhar a mudança */
-    max-width: 900px; 
-    margin: 30px auto;
+.card {
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95); 
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-#mensagem-interativa {
-    padding: 20px;
-    border-left: 5px solid #7E2F7E;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-}
-#mensagem-interativa h3 {
-    color: #7E2F7E;
-}
-
-/* Classes para animação */
-.mensagem-oculta {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.mensagem-visivel {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* Navegação Inferior (Botões do Quebra-cabeça) */
-.bottom-nav-puzzle {
-    background-color: #7E2F7E;
-    color: white;
-    padding: 15px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+/* Card da Esquerda (PROPEDÊUTICO) - Cor Verde Claro da imagem Mecânica */
+.left-card {
+    flex-basis: 25%;
+    background-color: #38a84a; /* Verde da Mecânica */
+    color: #fff;
     text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    padding: 30px 20px; /* Mais espaço interno como na imagem */
 }
 
-.bottom-nav-puzzle ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+.left-card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
-.bottom-nav-puzzle ul li a {
-    text-decoration: none;
-    color: white;
+.left-card img {
+    width: 100%;
+    max-width: 150px;
+    margin: 15px 0;
+}
+
+.left-card h1 {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+/* Botão MATRICULE JÁ SEU FILHO - Cor Azul Intenso da imagem */
+.left-card button {
+    background-color: #0000ff; /* Azul Intenso */
+    color: #fff;
+    font-size: 14px;
     font-weight: bold;
-    padding: 10px 20px;
-    background-color: #A052A0;
-    border-radius: 20px;
-    transition: background-color 0.3s, transform 0.1s;
-    display: block;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.bottom-nav-puzzle ul li a:hover {
-    background-color: #B266B2;
-    transform: translateY(-2px);
+.left-card button:hover {
+    background-color: #0000cc;
+}
+
+/* Card do Meio (Informações) - Cor Verde Escuro da imagem Mecânica */
+.info-card {
+    flex-basis: 50%;
+    background-color: #2a7f4a; /* Verde Escuro da Mecânica */
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.info-card ul {
+    margin-left: 25px;
+    margin-top: 10px;
+    list-style-type: disc;
+}
+
+.info-card li {
+    margin-bottom: 8px;
+}
+
+/* Barra Lateral (Logo) - Fundo Branco */
+.sidebar {
+    flex-basis: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Mantido branco como na imagem original */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* 4. Rodapé - Cor Roxo da imagem */
+.main-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10%;
+    background-color: #5d3a9b;
+}
+
+.main-footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
 }

@@ -34,7 +34,7 @@
     <section class="course-grid">
         <div class="course-card red" data-course-name="Preparatório ENEM">
             <div class="card-content">
-                <link href="">
+
             </div>
         </div>
         <div class="course-card blue" data-course-name="Análises Químicas">

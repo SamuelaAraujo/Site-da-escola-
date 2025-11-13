@@ -124,7 +124,7 @@ body {
 
 /* Coluna Esquerda: Card Energia */
 .card-energia {
-    background-color: #3c5295;
+    background-color: #dc0c1a;
     color: var(--color-white);
     border-radius: 10px;
     padding: 20px;
@@ -138,7 +138,7 @@ body {
 }
 
 .card-energia .card-header {
-    background-color: #3c5295; /* Faixa roxa mais escura */
+    background-color: #dc0c1a; /* Faixa roxa mais escura */
     width: 100%;
     padding: 8px;
     border-radius: 5px;
@@ -179,7 +179,7 @@ body {
 
 /* Coluna Central: Card Texto */
 .card-texto {
-    background-color: #3c5295;
+    background-color: #dc0c1a;
     color: var(--color-white);
     border-radius: 10px;
     padding: 20px;
